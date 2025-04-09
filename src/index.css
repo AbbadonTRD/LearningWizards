@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.pixel-text {
+  font-family: 'Press Start 2P', monospace;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  -webkit-font-smoothing: none;
+  image-rendering: pixelated;
+}
+
+.title-gradient {
+  background: linear-gradient(45deg, #FFD700, #FFA500);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: none;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background-color: white;
+  border-radius: 50%;
+  animation: twinkle 1s infinite alternate;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.2; }
+  100% { opacity: 1; }
+}
+
+.typewriter {
+  border: 8px solid #000;
+  box-shadow: 
+    8px 8px 0 rgba(0, 0, 0, 0.5),
+    inset 4px 4px 0 rgba(255, 255, 255, 0.2),
+    inset -4px -4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.typewriter-text {
+  display: inline-block;
+  overflow: hidden;
+  white-space: pre-line;
+}
+
+.cursor {
+  animation: blink 1s step-end infinite;
+}
+
+/* Hide elements on scroll */
+.scroll-hide {
+  transition: transform 0.3s ease-in-out;
+  opacity: 0;
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+
+.scroll-hide.visible {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Prevent text selection */
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+@keyframes blink {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.pixel-3d-text {
+  position: relative;
+  transform-style: preserve-3d;
+  transform: perspective(1000px) rotateX(5deg);
+}
